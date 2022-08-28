@@ -27,11 +27,17 @@ if __name__ == '__main__':
 
     # Alumno: Graficar la función utilizando "scatter"
     # utilizando "x" e "y" ya disponible
+    fig = plt.figure()
+    fig.suptitle('TAngente Hiperbólica', fontsize=16)
+    ax = fig.add_subplot()  
+
 
     # Colocar la leyenda y el label con el nombre de la función
-
+    ax.plot(x,y,marker = 'D', c='darkred')
+    ax.legend()
+    ax.grid()
     # Elegir un marker a elección
 
     # Crear acá su gráfico
-
+    plt.show()
     print("terminamos")

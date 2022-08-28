@@ -8,6 +8,7 @@
 # que aparecen en verde con el hashtag "#"
 
 # Ejercicios de matplotlib
+from cProfile import label
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -43,9 +44,30 @@ if __name__ == '__main__':
     #  graf3 | graf4
     # Utilizar add_subplot para lograr este efecto
     # de "2 filas" "2 columna" de gráficos
-
+    fig = plt.figure()
+    fig.suptitle('Gráficos Múltiples', fontsize=16)
+    ax1 = fig.add_subplot(2, 2, 1)  # 1 fila, 2 columnas, axes nº1
+    ax2 = fig.add_subplot(2, 2, 2)  # 1 fila, 2 columnas, axes nº2
+    ax3 = fig.add_subplot(2, 2, 3)  # 1 fila, 2 columnas, axes nº3
+    ax4 = fig.add_subplot(2, 2, 4)  # 1 fila, 2 columnas, axes nº4
     # Se debe colocar en la leyenda la función que representa
     # cada gráfico
+    ax1.plot(x, y1, c='darkgreen',label='X**2')
+    ax1.legend()
+    ax1.grid()
+
+    ax2.plot(x, y2, c='y',label='X**3')
+    ax2.legend()
+    ax2.grid()
+    
+    ax3.plot(x, y3, c='b',label='X**4')
+    ax3.legend()
+    ax3.grid()
+
+    ax4.plot(x, y3, c='r',label='Raíz de 4')
+    ax4.legend()
+    ax4.grid()
+
 
     # Cada gráfico realizarlo con un color distinto
     # a su elección
@@ -53,5 +75,5 @@ if __name__ == '__main__':
     # Colocar una grilla a elección
 
     # Crear acá su gráfico
-
+    plt.show()
     print("terminamos")
